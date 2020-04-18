@@ -21,7 +21,7 @@ import com.java.Schedule;
 @Path("/Schedule")
 public class ScheduleService {
 	
-	Schedule scheduleObj = new Schedule();
+Schedule scheduleObj = new Schedule();
 	
 	@GET
 	@Path("/")
@@ -84,8 +84,6 @@ public class ScheduleService {
 		
 		return output;
 	}
-	
-	
-	
+
 
 }

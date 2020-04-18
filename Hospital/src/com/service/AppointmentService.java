@@ -25,7 +25,7 @@ import com.java.Appointment;
 @Path("/Appointment")
 public class AppointmentService {
 
-	Appointment appointmentObj = new Appointment();
+Appointment appointmentObj = new Appointment();
 	
 	@GET
 	@Path("/")
@@ -85,5 +85,6 @@ public class AppointmentService {
 		return output;
 		
 	}
+
 	
 }

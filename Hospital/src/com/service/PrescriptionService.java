@@ -18,10 +18,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import com.java.Prescription;
-@Path("/Perscription")
+
+@Path("/Prescription")
 public class PrescriptionService {
-	
-	Prescription press = new Prescription();
+
+Prescription press = new Prescription();
 	
 	@GET
 	@Path("/")
@@ -75,5 +76,6 @@ public class PrescriptionService {
 		
 		return output;
 	}
+
 	
 }

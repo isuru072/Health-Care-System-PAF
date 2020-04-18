@@ -1,8 +1,5 @@
 package com.service;
 
-
-
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
@@ -23,10 +20,10 @@ import com.google.gson.JsonParser;
 import com.java.Doctor;
 
 
-@Path("/Doctors")
+@Path("/Doctor")
 public class DoctorService {
 
-	Doctor objDoctor = new Doctor();
+Doctor objDoctor = new Doctor();
 	
 	//view a Doctor
 	@GET
@@ -99,6 +96,6 @@ public class DoctorService {
 		
 	}
 	
-	
+
 	
 }

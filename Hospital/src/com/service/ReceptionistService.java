@@ -19,10 +19,10 @@ import com.google.gson.JsonParser;
 
 import com.java.Receptionist;
 
-@Path("/Receptionists")
+@Path("/Receptionist")
 public class ReceptionistService {
-	
-	Receptionist objRecep = new Receptionist();
+
+Receptionist objRecep = new Receptionist();
 	
 	//read
 	@GET
@@ -82,5 +82,5 @@ public class ReceptionistService {
 		
 		return output;
 	}
-
+	
 }

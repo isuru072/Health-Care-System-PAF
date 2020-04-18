@@ -19,10 +19,10 @@ import com.google.gson.JsonParser;
 import com.java.Patient;
 
 
-@Path("/Patients")
+@Path("/Patient")
 public class PatientService {
-
-	Patient PatientObj = new Patient();
+	
+Patient PatientObj = new Patient();
 	
 	@GET
 	@Path("/")
@@ -86,7 +86,6 @@ public class PatientService {
 		return output;
 	}
 	
-	
-	
-	
+
+
 }
