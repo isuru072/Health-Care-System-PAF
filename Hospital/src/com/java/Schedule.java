@@ -22,7 +22,7 @@ public class Schedule {
 		
 		//inserting details
 		
-		public String insertSchedule(int doctor_ID,String doctor_Name,String specialization,int hospital_ID,double charges,String avail_time,String end_time) {
+		public String insertSchedule(int schedule_ID,int doctor_ID,String doctor_Name,String specialization,int hospital_ID,double charges,String avail_time,String end_time) {
 			String output = "";
 			try {
 				Connection con = connectMethod();
@@ -34,7 +34,7 @@ public class Schedule {
 				
 				PreparedStatement preparedStmt = con.prepareStatement(query);
 				
-				
+				//values
 				preparedStmt.setInt(1, 0);
 				preparedStmt.setInt(2, doctor_ID);
 				preparedStmt.setString(3, doctor_Name);
@@ -63,11 +63,10 @@ public class Schedule {
 			try {
 				Connection con = connectMethod();
 				if(con == null) {
-					return "Error while connecting to the database for inserting.";
+					System.out.println("Error while reading from database");
 				}
 				
-				output = "<table border=\"1\">"
-						+ "<tr>"
+				output = "<table border=\"1\"><tr>"
 						+ "<th>Schedule ID</th>" 
 						+ "<th>Doctor ID</th>"
 						+ "<th>Doctor Name</th>"
@@ -124,7 +123,7 @@ public class Schedule {
 				output += "</table>";
 
 			}catch(Exception e) {
-				output = "Error while reading the Schedule.";
+				System.out.println("Error while reading");
 				System.err.println(e.getMessage());
 			}
 			return output;

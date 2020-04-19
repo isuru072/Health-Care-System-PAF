@@ -96,6 +96,5 @@ Doctor objDoctor = new Doctor();
 		
 	}
 	
-
 	
 }

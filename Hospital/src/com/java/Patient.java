@@ -2,9 +2,6 @@ package com.java;
 
 //import file
 import java.sql.*;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 
 public class Patient {
@@ -61,6 +58,7 @@ public class Patient {
 				preparedStmt.execute();
 				con.close();
 				output = "Inserted successfully";
+				System.out.println(output);
 				
 			}catch(Exception e) {
 				output = "Error while inserting the patients";
@@ -81,8 +79,7 @@ public class Patient {
 					System.out.println("Error while connecting to the database for reading");
 				}
 				
-				output = "<table border=\"1\">"
-						+ "<tr>"
+				output = "<table border=\"1\"><tr>"
 						+ "<th>Patient ID</th>" 
 						+ "<th>Username</th>"
 						+ "<th>Password</th>"
@@ -155,7 +152,7 @@ public class Patient {
 				output += "</table>";
 				
 				}catch(Exception e) {
-					output = "Error while reading the Patient details.";
+					System.out.println("Error while reading");
 					System.err.println(e.getMessage());
 				}
 				return output;

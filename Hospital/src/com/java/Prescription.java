@@ -27,7 +27,7 @@ public class Prescription {
 			try {
 				Connection con = connectMethod();
 				if(con == null) {
-					return "Error while connecting to the database.";
+					System.out.println("Error while reading from database");
 				}
 				
 				//prepare the table for display
@@ -75,7 +75,7 @@ public class Prescription {
 				
 				
 			}catch(Exception e) {
-				output = "Error while reading the prescription.";
+				System.out.println("Error while reading");
 				System.err.println(e.getMessage());
 			}
 			

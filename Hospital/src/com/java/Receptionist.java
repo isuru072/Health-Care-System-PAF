@@ -69,12 +69,11 @@ public class Receptionist {
 
 				Connection con = connectMethod();
 				if(con == null) {
-					return "Error while connecting to the database for inserting.";
+					System.out.println("Error while reading from database");
 				}
 				
 				
-				output = "<table border=\"1\">"
-						+ "<tr>"
+				output = "<table border=\"1\"><tr>"
 						+ "<th>Receptionist ID</th>" 
 						+ "<th>Password</th>"
 						+ "<th>Name</th>"
@@ -128,7 +127,7 @@ public class Receptionist {
 				//complete the table
 				output += "</table>";	
 			}catch(Exception e) {
-				output = "Error while reading the Schedule.";
+				System.out.println("Error while reading");
 				System.err.println(e.getMessage());
 			}
 			return output;

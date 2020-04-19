@@ -21,14 +21,52 @@ public class Appointment {
 			}
 		
 		
-		public String readAppointment() {
+				
+		//inserting appointments
+		public String insertAppointment(int appointment_ID,String checkedStatus,String tokenNum,String patientstatus,String patientphone,String patientname,int d_ID,int schedule_ID,int hospital_ID) {
+			String output = "";
+			try {
+				Connection con = connectMethod();
+				if(con == null) {
+					return "Error while connecting to the database for inserting.";
+				}
+				
+				//creating prepared statement
+				String query = "insert into appointment" +  "(appointment_ID,checkedStatus,tokenNum,patientstatus,patientphone,patientname,d_ID,schedule_ID,hospital_ID)" + "values(?,?,?,?,?,?,?,?,?)";
+				PreparedStatement preparedStmt = con.prepareStatement(query);
+				
+				//values
+				preparedStmt.setInt(1, 0);
+				preparedStmt.setString(2, checkedStatus);
+				preparedStmt.setString(3, tokenNum);
+				preparedStmt.setString(4, patientstatus);
+				preparedStmt.setString(5, patientphone);
+				preparedStmt.setString(6, patientname);
+				preparedStmt.setInt(7, d_ID);
+				preparedStmt.setInt(8, schedule_ID);
+				preparedStmt.setInt(9, hospital_ID);
+				
+				
+				//execute
+				preparedStmt.execute();
+				con.close();
+				
+				output = "Inserted successfully";
+			} catch(Exception e) {
+				output = "Error while inserting the appointment.";
+				System.err.println(e.getMessage());
+			}
+			return output;
+		}
+		
+public String readAppointment() {
 			
 			String output = "";
 			
 			try {
 				Connection con = connectMethod();
 				if(con == null) {
-					return "Error while connecting to the database.";
+					System.out.println("Error while reading from database");
 				}
 				//prepare the table for display
 				output = "<table border=\"1\"><tr>"+"<th>AppointmentID</th>"+"<th>Checked Status</th>"+"<th>Token Number</th>"+"<th>Patient Status</th>"+"<th>Patient Phone</th>"+"<th>Patient Name</th>"+"<th>DoctorID</th>"+"<th>ScheduleID</th>"+"<th>HospitalID</th>"+"</tr>";
@@ -80,48 +118,12 @@ public class Appointment {
 							
 						
 			} catch(Exception e) {
-				output = "Error while reading the appointments.";
+				System.out.println("Error while reading");
 				System.err.println(e.getMessage());
 			}
 			return output;
 		}
-		
-		
-		public String insertAppointment(int appointment_ID,String checkedStatus,String tokenNum,String patientstatus,String patientphone,String patientname,int d_ID,int schedule_ID,int hospital_ID) {
-			String output = "";
-			try {
-				Connection con = connectMethod();
-				if(con == null) {
-					return "Error while connecting to the database for inserting.";
-				}
-				
-				//creating prepared statement
-				String query = "insert into appointment (appointment_ID,checkedStatus,tokenNum,patientstatus,patientphone,patientname,d_ID,schedule_ID,hospital_ID)" + "values(?,?,?,?,?,?,?,?,?)";
-				PreparedStatement preparedStmt = con.prepareStatement(query);
-				
-				//values
-				preparedStmt.setInt(1, 0);
-				preparedStmt.setString(2, checkedStatus);
-				preparedStmt.setString(3, tokenNum);
-				preparedStmt.setString(4, patientstatus);
-				preparedStmt.setString(5, patientphone);
-				preparedStmt.setString(6, patientname);
-				preparedStmt.setInt(7, d_ID);
-				preparedStmt.setInt(8, schedule_ID);
-				preparedStmt.setInt(9, hospital_ID);
-				
-				
-				//execute
-				preparedStmt.execute();
-				con.close();
-				
-				output = "Inserted successfully";
-			} catch(Exception e) {
-				output = "Error while inserting the appointment.";
-				System.err.println(e.getMessage());
-			}
-			return output;
-		}
+
 		
 		public String updateAppointment(int appointment_ID,String checkedStatus,String tokenNum,String patientstatus,String patientphone,String patientname,int d_ID,int schedule_ID,int hospital_ID) {
 			String output = "";

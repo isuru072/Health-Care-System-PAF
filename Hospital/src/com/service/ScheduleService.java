@@ -34,7 +34,7 @@ Schedule scheduleObj = new Schedule();
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String insertSchedule(@FormParam("Doctor_ID") int doctor_ID,
+	public String insertSchedule(@FormParam("Schedule_ID") int schedule_ID,@FormParam("Doctor_ID") int doctor_ID,
 			@FormParam("Doctor_Name") String doctor_Name,
 			@FormParam("Specialization") String specialization,
 			@FormParam("Hospital_ID") int hospital_ID,
@@ -42,7 +42,7 @@ Schedule scheduleObj = new Schedule();
 			@FormParam("Available_Time") String avail_time,
 			@FormParam("End_Time") String end_time) {
 		
-		String output = scheduleObj.insertSchedule(doctor_ID, doctor_Name, specialization, hospital_ID, charges, avail_time, end_time);
+		String output = scheduleObj.insertSchedule(schedule_ID,doctor_ID, doctor_Name, specialization, hospital_ID, charges, avail_time, end_time);
 		
 		return output;
 	}
