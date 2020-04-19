@@ -27,10 +27,7 @@ import com.java.stock;
 
 @Path("/Stock")
 public class resStock {
-	
-	String baseUrl = "http://localhost";
-	String PAYMENT_PORT = ":8080";
-	
+		
 	stock appdata = new stock();
 	
 	
@@ -44,40 +41,7 @@ public class resStock {
 			
 		return appdata.readstock();
 		}
-	
-		//Read API Hospital
-		@GET
-		@Path("/hospital")
-		@Produces(MediaType.TEXT_HTML)
-		public String gethospitaldetails() throws IOException
-		{
-			URL obj = new URL("http://localhost:8080/Payment/paymentAPI/Payments");
-			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-			con.setRequestMethod("GET");
-			int responseCode = con.getResponseCode();
-			System.out.println("GET Response Code :: " + responseCode);
-						
-			if (responseCode == HttpURLConnection.HTTP_OK) { // success
-				BufferedReader in = new BufferedReader(new InputStreamReader(
-						con.getInputStream()));
-				String inputLine;
-				StringBuffer response = new StringBuffer();
-
-				while ((inputLine = in.readLine()) != null) {
-					response.append(inputLine);
-				}
-				in.close();
-				// print result
-				System.out.println(response.toString());
-				return response.toString();
-			} else {
-				System.out.println("GET request not worked");
-				return "GET request not worked";
-			}
-		}
-	
-	
-	
+		
 	
 	//Insert API
 		@POST

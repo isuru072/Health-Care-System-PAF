@@ -8,7 +8,7 @@ public class connect {
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver"); 
-			con= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/hcdb", "root", "root");
+			con= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/hcdbadmin", "root", "");
 			//For testing
 			System.out.print("Successfully connected");
 			

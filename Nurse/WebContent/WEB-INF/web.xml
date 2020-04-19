@@ -10,7 +10,7 @@
 	
   <servlet-mapping>
 		<servlet-name>Jersey Web Application</servlet-name>
-		<url-pattern>/NurseService/*</url-pattern>
+		<url-pattern>/NurseServiceAPI/*</url-pattern>
   </servlet-mapping>
   
   

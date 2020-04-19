@@ -17,7 +17,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/MAC/Downloads/apache-maven-3.6.3-bin.zip"/>
-	<classpathentry kind="lib" path="C:/Users/MAC/Downloads/mysql-connector-java-5.1.38.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Thushan Isuru/Downloads/apache-maven-3.6.3-bin"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
